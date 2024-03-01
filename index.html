@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-3xl font-semibold">Phone hunt</h1>
+    </header>
+    <main class="mx-40">
+        <section>
+            <div>
+                <input id="search" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                <button onclick="searchBtn()" class="btn btn-active btn-primary">Search</button>
+            </div>
+
+            <div id="no-response" class="flex justify-center items-center h-40 hidden">
+                <p class="text-4xl">Nothing To Show<br>Search something else</p>
+            </div>
+
+            <div id="spinner" class="text-center my-40 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+        </section>
+
+        <section>
+            <div id="phone-container" class="grid grid-cols-3 mt-5 gap-5 text-black">
+            </div>
+            <div id="show" class="text-center my-10 hidden">
+                <button onclick="showAll()" class="btn btn-active btn-primary">Show All</button>
+            </div>
+            <div id="modal">
+                
+                <!-- Open the modal using ID.showModal() method -->
+                <!-- button na thakleo cholbe but dialog thakte hbe -->
+                <dialog id="ShowDetail" class="modal">
+                    <div class="modal-box">
+                        <h3 class="font-bold text-lg">Hello!</h3>
+                        <p class="py-4">Press ESC key or click the button below to close</p>
+                        <!-- vajal silo ei div e. etar monne jini add hbe -->
+                        <div id="detail-container" class="text-start">
+                    
+                        </div>
+
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>
+
+            </div>
+        </section>
+    </main>
+
+
+</body>
+<script src="js/phone.js"></script>
+
+</html>
