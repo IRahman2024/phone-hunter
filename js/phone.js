@@ -7,6 +7,7 @@ const load = async (search, isShowAll) => {
     console.log(data.status);
     console.log(search);
     
+    //this checks if the search is valid or not
     if (!data.status)
             noResponse(data.status);    
     else
@@ -127,8 +128,6 @@ const loadModal = phone => {
     `;
     // modal.appendChild(newModal);
     showDetail.showModal();
-
-
 }
 
 function noResponse(res) {
